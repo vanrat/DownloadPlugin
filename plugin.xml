@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.happy.downloadplugin"
+      version="1.0">
+    <name>DownloadPlugin</name>
+    <description>Downloader Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,downloader</keywords>
+ 
+    <js-module src="www/DownloadPlugin.js" name="DownloadPlugin">
+        <clobbers target="DownloadPlugin" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="DownloadPlugin">
+                <param name="android-package" value="com.happy.downloadplugin.DownloadPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/DownloadPlugin.java" target-dir="src/com/happy/downloadplugin" />     
+     </platform>         
+</plugin>
